@@ -7,5 +7,12 @@ const products=[{
   },
   priceCents:1090,
 },{
-  
+  image:'images/products/intermediate-composite-basketball.jpg',
+  name: 'Intermediate Size Basketball',
+  rating:{
+    stars:4,
+    count:127,
+
+  },
+  priceCent:2095,
 }];
