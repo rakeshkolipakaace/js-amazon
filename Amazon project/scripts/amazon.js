@@ -24,9 +24,10 @@ const products=[{
   priceCents:799
 }];
 
+let productsHTML='';
 
 products.forEach((product)=>{
-  const html=` <div class="product-container">
+  productsHTML= productsHTML+` <div class="product-container">
           <div class="product-image-container">
             <img class="product-image"
               src="${product.image}">
@@ -74,6 +75,7 @@ products.forEach((product)=>{
             Add to Cart
           </button>
         </div>`;
-        console.log(html);
+      
 
 })
+console.log(productsHTML);
