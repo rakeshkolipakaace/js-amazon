@@ -79,3 +79,5 @@ products.forEach((product)=>{
 
 })
 console.log(productsHTML);
+
+document.querySelector('.js-pproducts-grid').innerHTML=productsHTML;
