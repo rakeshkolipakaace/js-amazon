@@ -61,7 +61,13 @@ products.forEach((product)=>{
 document.querySelector('.js-pproducts-grid').innerHTML=productsHTML;
 document.querySelectorAll('.js-add-to-cart').forEach((button)=>{
   button.addEventListener('click',()=>{
-  console.log(button.dataset.productName);
+  const productName=button.dataset.productName;
+  cart.push({
+    productName: productName,
+    quantity:1,
+
+  })
+  console.log(cart);
   });
 
 })
