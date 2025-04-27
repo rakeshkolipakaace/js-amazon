@@ -1,14 +1,14 @@
-import {cart} from '..data/cart.js';
+import {cart} from '../data/cart.js';
 import {products} from '../data/products.js';
 
 let cartSummaryHTML='';
 
-cart.foreach((cartItem)=>{
+cart.forEach((cartItem)=>{
     const productId=cartItem.productId;
     let matchingproduct;
 
     products.forEach((product)=>{
-        if(productId.id===productId){
+        if(product.id===productId){
             matchingproduct=product;
         }
 
@@ -22,7 +22,7 @@ cart.foreach((cartItem)=>{
 
             <div class="cart-item-details-grid">
               <img class="product-image"
-                src="${matchingproduct.imagr}">
+                src="${matchingproduct.image}">
 
               <div class="cart-item-details">
                 <div class="product-name">
