@@ -8,6 +8,7 @@ hello();
 
 const today=dayjs();
 const deliverydate=today.add(7,'days');
+deliverydate.format('dddd, MMMM, D');
 
 console.log(deliverydate);
 
