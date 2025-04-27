@@ -6,6 +6,10 @@ import {formatCurrency} from'./utils/money.js';
 
 hello();
 
+const today=dayjs();
+const deliverydate=today.add(7,'days');
+
+console.log(deliverydate);
 
 let cartSummaryHTML='';
 
