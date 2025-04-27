@@ -8,6 +8,9 @@ import {hello} from 'https://unpkg.com/supersimpledev@1.0.1/hello.esm.js';
 import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js';
 
 
+import {deliveryOptions} from '../data/deliveryOptions.js'
+
+
 hello();
 
 const today=dayjs();
@@ -110,6 +113,13 @@ cart.forEach((cartItem)=>{
             </div>
           </div>`;
 });
+
+
+
+function deliveryOptionsHTML(){
+
+}
+
 
 
 document.querySelector('.js-order-summary').innerHTML=cartSummaryHTML;  
