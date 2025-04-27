@@ -117,6 +117,45 @@ cart.forEach((cartItem)=>{
 
 
 function deliveryOptionsHTML(){
+    deliveryOptions.forEach((deliveryOptions)=>{
+
+        const today=dayjs();
+
+        const deliveryDate= today.add(deliveryOptions.deliveryDays,'days');
+
+        const datastring = deliveryDate.format('dddd , MMMM, D');
+
+
+        const pricestring = deliveryOptions.priceCents=== 0 ? 'FREE' : `$${formatCurrency(deliveryOptions.priceCents)}`;
+
+
+        ` <div class="delivery-option">
+                  <input type="radio"
+                    class="delivery-option-input"
+                    name="delivery-option-${matchingproduct.id}">
+                  <div>
+                    <div class="delivery-option-date">
+                      Wednesday, June 15
+                    </div>
+                    <div class="delivery-option-price">
+                      $4.99 - Shipping
+                    </div>
+                  </div>
+                </div>
+                <div class="delivery-option">
+                  <input type="radio"
+                    class="delivery-option-input"
+                    name="delivery-option-${matchingproduct.id}">
+                  <div>
+                    <div class="delivery-option-date">
+                     ${datastring}
+                    </div>
+                    <div class="delivery-option-price">
+                      $9.99 - Shipping
+                    </div>
+                  </div>  
+                </div>`
+    });
 
 }
 
