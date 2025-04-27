@@ -3,6 +3,8 @@ import {products} from '../data/products.js';
 
 import {formatCurrency} from'./utils/money.js';   
 
+import {hello} from 'https://unpkg.com/supersimpledev@1.0.1/hello.esm.js';
+
 
 hello();
 
