@@ -1,5 +1,8 @@
 import {cart} from '..data/cart.js';
 import {products} from '../data/products.js';
+
+let cartSummaryHTML='';
+
 cart.foreach((cartItem)=>{
     const productId=cartItem.productId;
     let matchingproduct;
@@ -11,6 +14,7 @@ cart.foreach((cartItem)=>{
 
     });
     console.log(matchingproduct);
+    cartSummaryHTML+=
     ` <div class="cart-item-container">
             <div class="delivery-date">
               Delivery date: Tuesday, June 21
@@ -84,5 +88,7 @@ cart.foreach((cartItem)=>{
                 </div>
               </div>
             </div>
-          </div>`
+          </div>`;
 });
+
+console.log(cartSummaryHTML);
