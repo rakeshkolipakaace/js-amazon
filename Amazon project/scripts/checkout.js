@@ -112,7 +112,9 @@ document.querySelectorAll('.js-delete-link').forEach((link)=>{
 
         console.log(cart);
 
-        document.querySelector(`.js-cart-item-container-${productId}`).remove();
+       const container= document.querySelector(`.js-cart-item-container-${productId}`);
+
+        container.remove();
 
 
 
