@@ -1,5 +1,5 @@
 import {cart,removeFromCart , updateDeliveryOption} from '../../data/cart.js';
-import {products} from '../../data/products.js';
+import {products,getProduct} from '../../data/products.js';
 
 import {formatCurrency} from'../utils/money.js';   
 
@@ -8,7 +8,9 @@ import {hello} from 'https://unpkg.com/supersimpledev@1.0.1/hello.esm.js';
 import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js';
 
 
-import {deliveryOptions} from '../../data/deliveryOptions.js'
+import {deliveryOptions, getDeliveryOption} from '../../data/deliveryOptions.js'
+
+
 
 
 
@@ -29,26 +31,14 @@ let cartSummaryHTML='';
 
 cart.forEach((cartItem)=>{
     const productId=cartItem.productId;
-    let matchingproduct;
 
-    products.forEach((product)=>{
-        if(product.id===productId){
-            matchingproduct=product;
-        }
 
-    });
+    const matchingproduct=getProduct(productId);
     // console.log(matchingproduct);
 
     const deliveryOptionId=cartItem.deliveryOptionId;
 
-    let deliveryOption;
-
-     deliveryOptions.forEach((option)=>{
-      if(option.id===deliveryOptionId){
-        deliveryOption=option;
-      }
-
-    });
+    const deliveryOption= getDeliveryOption(deliveryOptionId);
 
 
     const today=dayjs();
@@ -123,7 +113,7 @@ function deliveryOptionsHTML(matchingproduct, cartItem){
         const ischecked= deliveryOptions.id === cartItem.deliveryOptionId;
         html+=
         ` <div class="delivery-option js-delivery-option data-product-id ="${matchingproduct.id}" 
-        data-delivery-option-id="${deliveryOptions.id}">
+        data-delivery-option-id="${deliveryOption.id}">
                   <input type="radio"
                   ${ischecked ? 'checked': ''}
                     class="delivery-option-input"
