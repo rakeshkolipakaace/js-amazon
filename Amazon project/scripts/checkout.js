@@ -126,7 +126,7 @@ function deliveryOptionsHTML(){
         const datastring = deliveryDate.format('dddd , MMMM, D');
 
 
-        const pricestring = deliveryOptions.priceCents=== 0 ? 'FREE' : `$${formatCurrency(deliveryOptions.priceCents)}`;
+        const pricestring = deliveryOptions.priceCents=== 0 ? 'FREE' : `$${formatCurrency(deliveryOptions.priceCents)} - `;
 
 
         ` <div class="delivery-option">
@@ -151,7 +151,7 @@ function deliveryOptionsHTML(){
                      ${datastring}
                     </div>
                     <div class="delivery-option-price">
-                      $9.99 - Shipping
+                      ${pricesrtrng} - Shipping
                     </div>
                   </div>  
                 </div>`
