@@ -38,6 +38,8 @@ expect(
     document.querySelector(`.js-product-quantity-${productId2}`).innerText
   ).toContain('Quantity: 1');
 
+  document.querySelector('.js-test-container').innerHTML = '';
+
     });
 
 
@@ -84,7 +86,12 @@ expect(document.querySelector(`.js-cart-item-container-${productId2}`)
 
 
 expect(cart.length).toEqual(1);
+
+
 expect(cart[0].productId).toEqual(productId2);
+
+document.querySelector('.js-test-container').innerHTML = '';
+
 
 
 
