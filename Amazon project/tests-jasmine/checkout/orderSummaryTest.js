@@ -20,7 +20,10 @@ describe('test suite : renderOrderSummary', () => {
           }]);
       });
 
-    
+loadFromStorage();
+
 renderOrderSummary();
+
+expect(document.querySelectorAll('.js-cart-item-container').length).toEqual(2);
     });
 });
