@@ -7,7 +7,7 @@ xhr.addEventListener('load',()=>{
     
 })
 
-xhr.open('GET','https://supersimplebackend.dev/products/first');
+xhr.open('GET','https://supersimplebackend.dev/images/apple.jpg');
 
 xhr.send();
 
