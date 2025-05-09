@@ -34,7 +34,7 @@ saveToStorage() {
   if (matchingItem) {
     matchingItem.quantity += 1;
   } else {
-    this.cart.push({
+    this.cartItems.push({
       productId: productId,
       quantity: 1,
       deliveryOptionId: '1'
@@ -81,6 +81,10 @@ updateDeliveryOption(productId, deliveryOptionId) {
 
 
 cart.loadFromStorage();
+
+cart.addToCart('83d4ca15-0f35-48f5-b7a3-1ea210004f2e');
+
+console.log(cart);
 
 
 
