@@ -1,9 +1,9 @@
-function Cart(){
+function Cart(loaclStorageKey){
   const cart={
     cartItems:undefined,
 
    loadFromStorage() {
-  this.cartItems = JSON.parse(localStorage.getItem('cart-oop'));
+  this.cartItems = JSON.parse(localStorage.getItem('localStorageKey'));
 
   if (!this.cartItems) {
     this.cartItems = [{
@@ -19,7 +19,7 @@ function Cart(){
 },
 
 saveToStorage() {
-  localStorage.setItem('cart-oop', JSON.stringify(this.cartItems));
+  localStorage.setItem('loaclStroageKey', JSON.stringify(this.cartItems));
 },
 
 
@@ -85,8 +85,8 @@ return cart;
 
 
 
-const cart=Cart();
-const businessCart= Cart();
+const cart=Cart('cart-oop');
+const businessCart= Cart('cart-business');
 
 cart.loadFromStorage();
 console.log(cart);
@@ -95,7 +95,6 @@ businessCart.loadFromStorage();
 
 
 console.log(businessCart);
-
 
 
 
